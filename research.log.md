@@ -164,3 +164,10 @@
 - 文件状态: 仓库 main=29631cd 与远程同步; 本地未跟踪残留: log_entry*.md, log_entry3.md (auto-logging 记录, 按惯例不入库), audit 临时文件已删; skill_out/ 已入库 (lit-review-pipeline v2.1 暂存区)。
 - 待办/下一步: (a) 用户侧: 手动安装 lit-review-pipeline v2.1 (cp skill_out\SKILL.md + skill_out\references\zhihu-publishing.md → C:\Users\huxia\.pi\agent\skills\lit-review-pipeline\, 建 references\ 目录) + /reload; (b) Clash 节点切换/订阅更新 (仅用户可操作); (c) 未来推广文章走 lit-review-pipeline §4 + references/zhihu-publishing.md; (d) 可选后续报告主题未定。
 - 技术备忘: LetPub 缩写锚定法 (官方缩写精确搜 → 去标签文本找缩写 → 向后 300 字符抓 IF:) 是多词刊名的可靠路径; raw.githubusercontent.com 不在隧道转发规则内, 回读审计必须走 api.github.com contents API; /dev/null 与 /dev/tcp 会被 workdir-guard 拦, 用 python 内联或 cwd 文件替代。
+
+## ===== [2026-10-01 01:36:40] ctx-guard checkpoint #2: 无新增交付, 状态未变 =====
+
+- 本轮动作: 仅上次 checkpoint (01:35:57) 的落盘与推送 (commit 见远程 main, push_rc=0), 无其他变更。
+- 文件状态: 与 01:35:57 checkpoint 完全一致 — main 已与远程同步, 报告4/报告5/双语 README/工具脚本/日志全部已提交推送, 回读审计 4/4 PASS 仍有效。
+- 下一步 (不变, 均为用户侧或未来会话): (a) 安装 lit-review-pipeline v2.1 (cp skill_out\SKILL.md + skill_out\references\zhihu-publishing.md → C:\Users\huxia\.pi\agent\skills\lit-review-pipeline\ 建 references\ 后 /reload); (b) Clash 节点切换 (7897 当前节点 fr0528.art 持续超时, 18964 隧道仍可用); (c) 知乎/推广发布走 lit-review-pipeline §4; (d) 新报告主题待用户定。
+- 无未落盘状态, autocompact 安全。
