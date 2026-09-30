@@ -82,3 +82,9 @@
 
 ## 下一步
 - GitHub 同步 (git add -A && git commit && git push), README 已先行更新。
+# ===== [2026-09-30 10:25:02] 第三篇推送完成 =====
+
+- commit 2258718 (5 files, +384/-2) 已推送 origin/main, git ls-remote 复核远端 HEAD = 2258718。
+- 仓库: https://github.com/lookski/sex-neuro-review (private)。
+- 推送故障与解法 (重要, 以后复用): github.com 443 直连与 clash 7897 代理通道均失败 (TLS handshake reset), 但用 curl --resolve 直连 140.82.121.4 返回 200; 解法 = `git config http.curloptResolve "github.com:443:140.82.121.4"` 后正常 push, 推完 unset。ssh.github.com:443 网络可达但本机 ed25519 key 未注册到 GitHub 账号, 不走此路。备用 IP 池: 140.82.121.4 可用, 20.205.243.166 超时。
+- 若以后再遇同类故障: 先 curl --resolve 试 IP, 通了就临时 curloptResolve, 不通再换 IP (github.com 常用段 140.82.112-121.x / 20.205.243.x)。
