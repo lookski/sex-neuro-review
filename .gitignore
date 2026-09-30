@@ -1,0 +1,12 @@
+# ---- 本目录为纯文档调研, 无代码无原始数据; 保守忽略临时与敏感项 ----
+# temporary / scratch
+*.tmp
+tmp/
+*.log.bak
+# pi agent state
+.pi/
+# sensitive
+.env
+*token*
+*secret*
+auth.json
