@@ -107,3 +107,42 @@
 ## 本地文件
 - gh_proxy_tool.py (新, 隧道脚本, 留作复用)
 - 其余临时工作文件已清理 (readme_work/ 已删)
+
+# ===== [2026-09-30 12:03:42] lit-review-pipeline 技能重写 + 知乎登录探针 完成 =====
+## 动作
+- 用 pi CDP 浏览器对 zhihu.com/signin 做了完整探针: 幽灵 ref 问题, evaluate_browser
+  focus + typeText 输入路径, execCommand 清空, SignFlow DOM 锚点, d_c0/z_c0 登录态判断,
+  易盾验证码瓶颈, Windows 前台拒绝等全部实测 (probe_zhihu_login.md)。
+- skill_out/SKILL.md 全面重写 (12.9KB -> 16.7KB): 补 frontmatter 规范 (name/description
+  按 pi docs), 加 0 节使用边界, 4.3 节知乎自动登录完整流程 (实测锚点写死), gh_proxy_tool
+  移入 scripts/ 子目录, 陷阱清单从 11 条扩到 14 条。
+## 关键方法
+- 知乎登录表单 outline @e ref rect 全 0 -> act_ui 全拒; 解法 = evaluate_browser focus
+  + act_ui typeText (省略 ref)。清空用 execCommand selectAll+delete, 键序无效。
+- 真瓶颈是网易易盾验证码, 不是表单; 技能里明确"失败两次转扫码"防硬刚。
+- GitHub pages 仓库改语言结构要联动 index.html/_sidebar.md。
+## 文件状态
+- skill_out/SKILL.md 16.7KB (209->约250行); skill_out/scripts/gh_proxy_tool.py 1669B。
+- probe_zhihu_login.md 新增 (探针记录)。
+## 下一步
+- 用户安装: mkdir -p ~/.pi/agent/skills/lit-review-pipeline && cp -r skill_out/* 到该目录。
+- 待真实发布时按 4.3 验证扫码+发布链路。
+
+# ===== [2026-09-30] 技能 v2.1: 规范对照优化 完成 =====
+## 动作
+- 通读 pi docs/skills.md, agentskills.io 规范全文, Anthropic Agent Skills 工程博客,
+  对照本机 5 个技能的 frontmatter。
+- skill_out/SKILL.md 升级 v2.1: 补 compatibility + metadata (author/version/updated),
+  description 加关键词 (影响因子/IF/推广文章/知乎专栏/computer use), 知乎发布细节
+  (DOM 锚点表/扫码轮询/发布链路/探针附录) 拆到 references/zhihu-publishing.md,
+  主文件只留 6 条保命事实; 修复可移植性 bug (探针记录原来指向工作目录文件,
+  现已捆绑进技能 references/)。
+- 校验: name 19/64, description 390/1024, compatibility 118/500, body 227 行 (<500)。
+## 关键方法
+- agentskills.io 规范要点: description 必须"做什么+何时用+具体关键词"; compatibility
+  有环境要求就该写; 互斥/低频内容拆 references/ 走 progressive disclosure;
+  文件引用相对技能根且只一层深。
+- 用户已手动安装 v2.0 (cp 命令执行过), v2.1 需再复制一次。
+## 下一步
+- 用户复制 v2.1: SKILL.md + references/zhihu-publishing.md → ~/.pi/agent/skills/lit-review-pipeline/
+- 下次真实发知乎时按 references/zhihu-publishing.md 走, 新坑追加到该文件。
