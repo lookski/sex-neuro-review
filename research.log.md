@@ -44,3 +44,11 @@
 - (b) 女性 RAI 动机 (Gana 2026, PMID 41789379);
 - (c) OA 论文 PDF 下载: Zaliznyak 2025 (PMCID PMC12128925), Dickstein 2023 (PMCID PMC10389287), 走 paper-download 技能。
 - 环境注意: E-utils 用 web_fetch 不用 curl (exit 35); 每条消息 <=2 次 E-utils 调用防 429; pmc 全文有 reCAPTCHA, 用 efetch 摘要。
+# ===== [2026-09-30 09:10:29] GitHub 备份 =====
+
+- 按用户要求完成三项增补后推送 GitHub:
+  1. 主报告新增 §6 "男女高潮模式的区别" (触发方式/时程/脑成像/不应期 + 8 行对照表), 引用 29 -> 40 篇 (新增 11 篇: Herbenick 2018/28678639, Waldinger 2005 IELT/16422843+16422844, Carmichael 1994/8135652, Wise 2017 已有, Huynh 2013b/23523775, Holstege 2004/14653149+2011/21352827, Seizert 2018/29940235, Munoz-Garcia 2023/36508069, Leonhardt 2024/36652377, Herbenick 2019/31502071; 全部 efetch 摘要核实)。
+  2. 两份报告引用表增加期刊 2025 IF 列, 数据逐刊实查 LetPub (2026-06 更新版), curl+python 解析表格行; J Sex Med 3.6, Sex Med Rev 3.0, J Sex Res 3.0, Arch Sex Behav 2.6, Nat Rev Urol 13.6, Nat Rev Neurosci 20.3, Int J Radiat Oncol 7.4, Urology 2.3, J Sex Marital Ther 2.2, Cortex 3.2, PLoS One 2.8, NeuroReport 2.1, Exp Brain Res 2.1, Biol Psychol 3.3, Eur J Neurosci 2.5, J Comp Neurol 2.3, Horm Behav 2.6, Prog Neurobiol 4.6, Am J Obstet Gynecol 7.9, J Womens Health 1.8, J Cosmet Dermatol 3.5, Ann Plast Surg 1.6, Obstet Gynecol Int 2.1, Physiol Behav 2.7, JAMA Psychiatry 18; 未核到的标 "---" 不猜数。
+  3. README.md 双语 + 人味口吻; commit 信息双语。
+- 建仓: gh repo create sex-neuro-review --private --source . --remote origin --push -> https://github.com/lookski/sex-neuro-review (private, main, commit 3d36960, 5 files, 77KB)。
+- 注意: gh api 偶发 TLS handshake timeout (重试即可); 本目录以后同步用 git add -A && git commit -m "sync <date>" && git push。
