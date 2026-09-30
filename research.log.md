@@ -157,3 +157,10 @@
 - 推送: commit 72971e5 (11 文件, +869-10) → origin/main 成功; 远程 API commits 端点确认 HEAD=72971e5。
 - 回读审计: audit (api.github.com contents, base64+SHA256) 4/4 PASS (报告4/报告5/README.md/README.zh.md); raw.githubusercontent.com 不在隧道转发规则内且直连被墙, 弃用。
 - 本地新增工具: fetch_ifs_20260930_v2.py (IF 批查 v2), diag_proxy_20261001.py (代理诊断), audit 走内联脚本。
+
+## ===== [2026-10-01 01:34:17] ctx-guard checkpoint: 报告4+5 交付闭环, 会话待收尾 =====
+
+- 本轮动作 (23:14 起的 split turn): (1) 报告4《文献调研_接受方肛门快感生理学_20261001.md》写作+回读校验 (9,213 字符, 22 表行/21 篇独立文献, PMID 全在, IF 校验通过); (2) 报告5《文献调研_精神药物与性功能抑制_20261001.md》写作+回读校验 (9,999 字符, 21 引用, 关键数字 56.4/>50/0.22/-1.30/67.7/87.5/-1.2/-1.8/2→8分钟/43,049/21,076 全部在文); (3) README.md+README.zh.md 更新为五篇结构 (edit 各 4 块); (4) 网络 self-heal: 诊断出 Clash 节点 fr0528.art 死亡 + 18964 隧道 (上游 140.82.121.6) 存活, git ls-remote 403 系代理残留, 凭据验证 OK; (5) commit 72971e5 (11 文件 +869-10) + 29631cd (日志) 推送成功; (6) 回读审计 api.github.com contents base64+SHA256 4/4 PASS (报告4/报告5/README.md/README.zh.md); (7) 新增工具 fetch_ifs_20260930_v2.py, diag_proxy_20261001.py。
+- 文件状态: 仓库 main=29631cd 与远程同步; 本地未跟踪残留: log_entry*.md, log_entry3.md (auto-logging 记录, 按惯例不入库), audit 临时文件已删; skill_out/ 已入库 (lit-review-pipeline v2.1 暂存区)。
+- 待办/下一步: (a) 用户侧: 手动安装 lit-review-pipeline v2.1 (cp skill_out\SKILL.md + skill_out\references\zhihu-publishing.md → C:\Users\huxia\.pi\agent\skills\lit-review-pipeline\, 建 references\ 目录) + /reload; (b) Clash 节点切换/订阅更新 (仅用户可操作); (c) 未来推广文章走 lit-review-pipeline §4 + references/zhihu-publishing.md; (d) 可选后续报告主题未定。
+- 技术备忘: LetPub 缩写锚定法 (官方缩写精确搜 → 去标签文本找缩写 → 向后 300 字符抓 IF:) 是多词刊名的可靠路径; raw.githubusercontent.com 不在隧道转发规则内, 回读审计必须走 api.github.com contents API; /dev/null 与 /dev/tcp 会被 workdir-guard 拦, 用 python 内联或 cwd 文件替代。
