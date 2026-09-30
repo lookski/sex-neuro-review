@@ -10,3 +10,4 @@ tmp/
 *token*
 *secret*
 auth.json
+__pycache__/
