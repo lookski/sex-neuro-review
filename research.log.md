@@ -88,3 +88,22 @@
 - 仓库: https://github.com/lookski/sex-neuro-review (private)。
 - 推送故障与解法 (重要, 以后复用): github.com 443 直连与 clash 7897 代理通道均失败 (TLS handshake reset), 但用 curl --resolve 直连 140.82.121.4 返回 200; 解法 = `git config http.curloptResolve "github.com:443:140.82.121.4"` 后正常 push, 推完 unset。ssh.github.com:443 网络可达但本机 ed25519 key 未注册到 GitHub 账号, 不走此路。备用 IP 池: 140.82.121.4 可用, 20.205.243.166 超时。
 - 若以后再遇同类故障: 先 curl --resolve 试 IP, 通了就临时 curloptResolve, 不通再换 IP (github.com 常用段 140.82.112-121.x / 20.205.243.x)。
+# ===== [2026-09-30 11:15:52] 仓库公开化 + 四仓双语切换改造 =====
+
+## 动作
+1. sex-neuro-review 改 PUBLIC (gh repo edit --visibility public, 走本地隧道)。
+2. 四个公开仓盘点 (gh repo list): sex-neuro-review, teeth-evidence, openjev, lifespan-evidence (均非 fork)。
+3. sex-neuro-review: 新英文版 README.md (默认首页, 顶部 "English | 中文"), 原双语版整体移到 README.zh.md (顶部 "中文 | English"); commits 1d62010 + 29dfd23。
+4. lifespan-evidence: README.en.md 内容成为新 README.md (默认英文), 原 README.md (中文) 移到 README.zh.md; 两份顶部互链; _sidebar.md 首行标签改 "[Summary (en/zh)](README.md)"; 删除旧 README.en.md (665e3e4); index.html homepage 无需改 (仍指 README.md, 现在即英文); commits fcdf295 / 5c97583 / fdbe744 / 665e3e4。回读审计: 两文件头部字节级验证 (标题/语言链接/UTF-8) 通过; code search 确认无残留 README.en.md 引用。
+5. teeth-evidence / openjev: 已是英文默认 + 顶部中文按钮 (teeth: README.zh.md; openjev: README.zh-CN.md), 未动。
+
+## 关键方法 (复用价值)
+- gh/git 直连全灭时: 本地 python CONNECT 隧道 (gh_proxy_tool.py, 监听 127.0.0.1:18964, 对 github* 域名固定走 140.82.121.6) + HTTPS_PROXY 指它; gh api / push 全通。隧道约 30min 会被超时回收, 断了重起即可。
+- gh api PUT 大文件 (>~8KB base64) 不能走 --field (Argument list too long), 用 python 生成 JSON payload + --input。
+- contents API 更新已存在文件必须带 sha; 新建不用。
+- git clone 走隧道 403 (credential-manager 与代理不兼容), 放弃 clone, 全部走 contents API 打补丁。
+- 中文内容经 API 回传后 Windows 控制台显示乱码是显示层问题, 用 python reconfigure(utf-8) 断言验证字节正确。
+
+## 本地文件
+- gh_proxy_tool.py (新, 隧道脚本, 留作复用)
+- 其余临时工作文件已清理 (readme_work/ 已删)
