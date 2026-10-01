@@ -171,3 +171,13 @@
 - 文件状态: 与 01:35:57 checkpoint 完全一致 — main 已与远程同步, 报告4/报告5/双语 README/工具脚本/日志全部已提交推送, 回读审计 4/4 PASS 仍有效。
 - 下一步 (不变, 均为用户侧或未来会话): (a) 安装 lit-review-pipeline v2.1 (cp skill_out\SKILL.md + skill_out\references\zhihu-publishing.md → C:\Users\huxia\.pi\agent\skills\lit-review-pipeline\ 建 references\ 后 /reload); (b) Clash 节点切换 (7897 当前节点 fr0528.art 持续超时, 18964 隧道仍可用); (c) 知乎/推广发布走 lit-review-pipeline §4; (d) 新报告主题待用户定。
 - 无未落盘状态, autocompact 安全。
+
+## ===== [2026-10-01 02:05:00 区间] IF 补录 + 刊名更正 + 隧道自愈推送 =====
+
+- 用户开梯子后 (但 git 直连仍不通, GFW 对 GitHub IP 段动态抖动): 重查 LetPub 补齐两报告全部 "—" IF。
+- 新 IF (全部 ISSN/刊名锚定实查): J Sex Marital Ther=2.2 (0092-623X), Am J Gastroenterol=8.5 (0002-9270), JAIDS=2.3 (1525-4135), Birth=2.3 (0730-7659, Basson), Eur Neuropsychopharmacol=8.1 (0924-977X), Am J Drug Alcohol Abuse=2.6 (0095-2990), Pain Physician=3.2 (1533-3159), Rev Int Androl=1.4 (1698-031X), Urology=2.3 (0090-4295), Pharmacol Rev=20.3 (0031-6997, 备用), Nat Rev Gastro Hepatol=57.5 (1759-5045, 两次复现)。
+- 刊名更正 (efetch TA/JT 字段为准): Smith 2012 OPIAD 实刊 Pain Physician (原误记 Pain Med); Hosseinzadeh 2021 实刊 Revista Internacional de Andrologia; Healy 2024 刊名确认 Epidemiol Psychiatr Sci。两报告 "IF —" 清零, 补录说明段落已插入参考文献节前。
+- commit 01935be 推送: 直连失败 → 18964 隧道上游 140.82.121.6 也超时 → 写自愈脚本 (tls_ok + 一次性隧道 GET 验证轮询候选 IP, 选用 140.82.112.3) → 重启隧道后第一次 push "remote end hung up" 误报 up-to-date, 第二次 push 成功 (c6ba5a6..01935be)。
+- 回读审计: api.github.com contents 走 urllib 老报 RemoteDisconnected (疑似大 payload/keep-alive 问题), curl 走隧道返回 301 (URL 编码差异) → 最终改用 git 层审计: git fetch origin main (env 代理) 成功 + git ls-tree origin/main blob sha 与 git hash-object 工作区比对: 8dc39fdeb400 / a0f0eb38482e 两边一致 = PASS。
+- 工具沉淀: gh_tunnel_local.py (cwd 内隧道副本, REMOTE 可换 IP); 隧道自愈方法论: tls_ok(ip) 快筛 → 端口 18965 一次性隧道实例 GET github.com/manifest.json 验证 → 选中 IP 写回 REMOTE 重启 18964。
+- 遗留: Clash Verge 节点 fr0528.art 仍死 (梯子开了但对 github 直连无效, 走的是 18964 自建隧道); gh_tunnel_test.py 临时文件已删。
