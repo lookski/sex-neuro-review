@@ -1,4 +1,5 @@
-# ---- 本目录为纯文档调研, 无代码无原始数据; 保守忽略临时与敏感项 ----
+# ---- 本目录以文献调研报告为主, 附带少量检索/核验辅助脚本; 无原始研究数据 ----
+# 保守忽略临时项, 本地网络工具与日志
 # temporary / scratch
 *.tmp
 tmp/
@@ -11,3 +12,8 @@ tmp/
 *secret*
 auth.json
 __pycache__/
+# runtime logs
+*.log
+# local GitHub tunnel tooling (session infrastructure, not part of the review)
+gh_tunnel_local.py
+gh_proxy_tool.py
