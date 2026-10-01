@@ -181,3 +181,10 @@
 - 回读审计: api.github.com contents 走 urllib 老报 RemoteDisconnected (疑似大 payload/keep-alive 问题), curl 走隧道返回 301 (URL 编码差异) → 最终改用 git 层审计: git fetch origin main (env 代理) 成功 + git ls-tree origin/main blob sha 与 git hash-object 工作区比对: 8dc39fdeb400 / a0f0eb38482e 两边一致 = PASS。
 - 工具沉淀: gh_tunnel_local.py (cwd 内隧道副本, REMOTE 可换 IP); 隧道自愈方法论: tls_ok(ip) 快筛 → 端口 18965 一次性隧道实例 GET github.com/manifest.json 验证 → 选中 IP 写回 REMOTE 重启 18964。
 - 遗留: Clash Verge 节点 fr0528.art 仍死 (梯子开了但对 github 直连无效, 走的是 18964 自建隧道); gh_tunnel_test.py 临时文件已删。
+
+## ===== [2026-10-01 09:50:00 区间] 隧道二段自愈 + 全部入库 =====
+
+- 上一 checkpoint 后追加: audit_readback_20261001.py 入库 (65c3cbc)。
+- 隧道波动史 (同日上午): 140.82.112.3 → 抖动; 轮询自愈脚本 (18966 一次性实例法) 因 heredoc 写 tmp 脚本 b'..' 转义错误全 fail (教训: 动态生成含 \r\n 字面量的 python 源码必须用文件复制+regex 替换, 不要 heredoc 内嵌); 改用 cp skill_out/scripts/gh_proxy_tool.py + regex 改 REMOTE/LISTEN 成功, 选中 140.82.121.3; 主隧道 18964 重启后 push 5ae2a57..65c3cbc 成功, ls-remote 复核远程 HEAD=65c3cbc。
+- 当前隧道: gh_tunnel_local.py (cwd, REMOTE=140.82.121.3, port 18964) 持续运行; Clash 梯子对 GitHub 直连仍无效 (GFW IP 段抖动), 所有 GitHub 流量走自建隧道。
+- 远程 HEAD=65c3cbc, 本地=远程, 全部交付物 (5 报告+双语 README+工具+日志) 均在库。
