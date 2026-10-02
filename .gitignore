@@ -19,3 +19,8 @@ gh_tunnel_local.py
 gh_proxy_tool.py
 # regenerable query caches
 _*.json
+# downloaded closed-access PDFs: keep OUT of the public repo
+paper_pdfs/*.pdf
+# regenerable search caches
+_r6*.txt
+_*.txt

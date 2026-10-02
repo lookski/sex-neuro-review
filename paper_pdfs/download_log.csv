@@ -1,0 +1,7 @@
+input,publisher,channel,status,size_bytes,path,error
+10.1007/BF01541970,10.1007,unpaywall+europepmc,manual_needed,0,,no OA copy and no PMC full text; needs manual download
+10.1016/j.sxmr.2015.12.004,10.1016,unpaywall+europepmc,manual_needed,0,,no OA copy and no PMC full text; needs manual download
+10.1007/BF01541618,10.1007,unpaywall+europepmc,manual_needed,0,,no OA copy and no PMC full text; needs manual download
+10.1038/sj.ijir.3900823,nature.com,curl+edge+europepmc+agentic,failed,0,,nature curl+edge+europepmc+agentic all failed
+10.1016/j.jsxm.2021.06.017,10.1016,unpaywall+europepmc,manual_needed,0,,no OA copy and no PMC full text; needs manual download
+10.1111/j.1743-6109.2009.01663.x,wiley,edge,failed,0,,edge channel failed after cooldown retry

@@ -266,3 +266,12 @@
 - 工具沉淀: if_backfill_20261003.py (两报告 21 处替换, 每步断言唯一匹配) 与 if_footnote_fix_20261003.py (脚注与口径统一), 均入库。使用中两个教训: (a) heredoc 内联 python 的 \uXXXX 字面量会被 workdir-guard 误判为外部路径 — 复杂逻辑一律落 .py; (b) 中文字符 "姉妹/姊妹" 极易写错, 长中文串匹配改用短锚点 (如 "LetPub 与 J Sex Med 同列 (IF 3.6 口径, 实查)。")。
 - 遗留 (待办): (a) 知乎推广文 (需用户 /guard-allow 安装 lit-review-pipeline v2.1); (b) Clinics 与 Int J Gynaecol Obstet 两 IF 仍缺 (LetPub 无条目, 长期可用 "—" 或换来源); (c) 报告2 (体表快感地图) 尚未做逐条 efetch 机械化复核 (报告1/3/4/5/6 已做)。
 - 网络: 直连仍间歇性抖动, 本轮推送走 18964 隧道。
+
+## ===== [2026-10-03 01:40:00] 报告6 §3.6 拓展: 男性多重高潮/非射精高潮 (两篇全文下载阅读) =====
+
+- 用户要求: 拓展报告6 §3.6, 下载那两篇论文阅读分析, 并拓展相关论文, 写完自己推送。
+- **下载结果 (paper-download 技能流程)**: download_paper.py 6 篇跑完 ok=0 manual_needed=4 failed=2 (Elsevier 双盲验证 + Wiley CF 冷却重试均失败, nature 域返回 Page Not Found HTML 被误存为 PDF -- 已删)。Unpaywall/Europe PMC 复查: 6 篇全部 closed (无 OA 副本, 无 PMC)。**改用 Springer content/pdf 端点直连机构 IP (159.226.67.143) 成功取得 2 篇全文 PDF**: Dunn & Trost 1989 (712 KB) 与 Carmichael 1994 (1.36 MB), 落盘 paper_pdfs/。教训: download_paper.py 的 10.1007 通道只走 unpaywall, 未尝试 Springer PDF 端点, 手册应补。
+- **全文阅读 (pymupdf 提取, 逐段核对)**: Dunn & Trost 1989 的三种序列模式 (A 先干后射 3 人 / B 先射后干 2 人 / C 混合序列 16 人), 2-9 次每场 (最高 16 次), 15 min-2 h, 强度与精液量无关, 自判干性高潮的三条依据 (避孕套无液体/无尿道波/无潮湿感), 原生 13/偶发 6/学习 2 三类习得路径 (squeeze, stop-start, Hartman & Fithian 1984 的 PC 肌训练), Robbins & Jensen 1978 定义 (13 人, "除最后一次外均不射精") 及其排除规则, Masters & Johnson 1966 曾把男性多重高潮视为病理。Carmichael 1994: 13 女 + 10 男, 肛 EMG + 肛 APG + 收缩压 + 连续催产素采血; Type A (连续递减收缩) vs **Type B (序列中出现 2-3 s 静息期)**, 盲法独立评分, 70% 测试间一致, 肛门收缩次数与高潮时长高度相关, OT 与主观强度仅多重高潮女性显著; 原文引 Bohlen 1982 与 Kadefors 1970 作为肛 EMG 判据 (与报告4 呼应)。
+- **新核验并写入的 4 条相关文献 (摘要级)**: Griffin-Mathieu 2021 (n=122, 79.5% 为 2-4 次, 多数全程勃起且每次射精, 年龄非相关, 4 类画像 -- 纠正 "多重高潮=无射精" 的通俗误解); Haake 2002 (N=1, 多重高潮男性三次高潮均无催乳素反应, 对照 9 人); Shimizu 2010 (双盲交叉 RCT: 4 mg 西洛多辛致干性射精 -> 主观高潮 NRS -1.3 P=.003, 盆底/球海绵体肌收缩 -1 次 P=.003, 精液 -1.8 mL P<.0001, 22% 反应不全; 结论 "精液通过尿道 + 盆底节律收缩共同构成高潮愉悦"); Robbins & Jensen 1978 与 Hartman & Fithian 1984 为转引, 未单独取 PMID。
+- §3.6 由 2 条要点扩为 6 小节 (定义之争/三种序列模式/大样本纠偏/生理学/因果实验/与病理分界) + 一张三源对比表; TL;DR 增第 8 条; 文献 38 -> 42 条, 双向一致性 0 孤儿; 表后注明哪些是全文核验/摘要级待人工下载/转引。
+- 仍待用户人工下载 (闭订阅源, 机构 Edge 可免验证直下): Wibowo 2016 (10.1016/j.sxmr.2015.12.004), Griffin-Mathieu 2021 (10.1016/j.jsxm.2021.06.017), Haake 2002 (10.1038/sj.ijir.3900823), Shimizu 2010 (10.1111/j.1743-6109.2009.01663.x); 到货后升级为全文级引用。
