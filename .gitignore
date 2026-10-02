@@ -17,3 +17,5 @@ __pycache__/
 # local GitHub tunnel tooling (session infrastructure, not part of the review)
 gh_tunnel_local.py
 gh_proxy_tool.py
+# regenerable query caches
+_*.json

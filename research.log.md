@@ -210,3 +210,26 @@
 - 双语 README 同步: 第四篇引用数 22→19, 编号规则更新, van Netten 口径由 "94% 准确率区分真实与伪装" 改为 "识别 94% (29/31) 真实高潮且在自愿伪装时不出现", IF 说明由 "未进 JCR 标 —" 改为 "按 LetPub 原值标注加脚注", 状态节补 v2 复核条目并修正 "纯文档无代码" 的过时描述 (库内已有 4 个辅助脚本)。
 - .gitignore: 头部注释更新 (不再称 "无代码"), 新增 *.log 与本地隧道工具 (gh_tunnel_local.py / gh_proxy_tool.py) 忽略规则 — 解决遗留的两个未跟踪文件。
 - **网络状态变化 (重要)**: 本轮 curl 直连 api.github.com 返回 200 / 0.53s — GitHub 直连已恢复, 无需 18964 隧道; Clash 7897 仍死 (5s 超时)。git fetch/ls-tree 直连成功, 远程 HEAD=0be66ab 与本地一致后才开始改文件。
+
+## ===== [2026-10-02 23:48:28] ctx-guard checkpoint #3: 报告4/5 v2 已推送 + 报告1-3 自动复核结果 + 报告6 (干性高潮) 立项 =====
+
+### 本轮已完成的动作 (全部已推送)
+- 报告4 v2: 逐条 efetch 复核 + 全文重写。三轮复核共修正 7 处引用错误 + 4 处实质数据错误: 删 37686619 (实为肺癌 AI 筛查)/22948452 (实为阴道脱垂术后性功能)/36000809 (Inoue, 关联薄弱); 24286789 (实为 Lancet 非自愿性行为) 替换为 Lewis 2017 (29169520); Fritz 35165802 实刊 Arch Sex Behav (非 J Sex Med); Basson 26003236 实刊 Handb Clin Neurol (非 Birth, IF 按 LetPub 原值标 0 加脚注); 新增 Wheldon 2023 (36796863) 与 Rao 2026 (41713710) 并为 Vedovo 2025 补正文段 (原孤儿引用)。**实质数据错误**: Markland 2016 POR 性别方向写反 (实为女 1.5/男 2.8, 周期 2009-2010 非 2005-2010, 删摘要不存在的 "剂量-效应" 表述); Nercessian 2023 人群写反 (实为 MSM+顺性别女性 3:1, 明确无间性人/跨性别研究, 无任何治疗研究); Wu 2014 的 53% 口径更正为 "任意男性伴侣 UAI" (62 文/82 研究, 趋势下降); Sartori 2021 撤回 "肌力更高+FSFI 相关" (摘要只有收缩持续时间 p=.033/.018); Herbenick 2015 改为事件级原文 (NSSHB 2012 n=1738: 肛交疼痛女约72%/男约15%, 分母是 "最近一次性事件含肛交者"); Stone 1999 补全 (HIVNET 2592 人, 失败=滑脱/破裂, 接受方 2.5/100 vs 插入方 1.9/100, 润滑剂>80% 仅在插入方模型显著); Bohlen 1982 (11 未产妇×3 场合, 双探头同步, 间期+0.1s/次, 类型 I/II/IV); van Netten 2008 (23 人三任务含假装高潮, alpha 8-13Hz, 94%=29/31 识别, 69%=44/64 分类); Zaliznyak 2025 (n=964, 女34%vs男24% 既往RAI, 男39%vs女19% 仅凭RAI高潮, 直肠前壁浅层两性首选)。最终 19 条引用, 双向 PMID 一致性 0 孤儿。
+- 报告5 v2: Haensel IF 2.9→9.7 (J Urol, ISSN 0022-5347); Healy 2024 撤回 "大型数据库无法识别", 改为摘要六项障碍+PSSD 症状谱+MedDRA 编码未被监管采纳; Hosseinzadeh 2021 撤回 NO/睾酮机制 (摘要只有 GABA-A 增强致勃起减弱); Seecof 1986 crack→可卡因, 排序口径澄清; 删 Waldinger 自我更正残句; Korchia 效应量确认为 meta 回归 β (抗抑郁 -6.30 P=.006 / 心境稳定剂 -13.21 P<.001) 非 OR; Leucht SMD 符号方向用同摘要体重条目惯例推定 (-1.30 帕利哌酮最强); Luft 2021 补开放标签 70% vs 安慰剂对照 22% 偏倚对比; Gonçalves 2022 补 HDRS 第14项代理指标口径; Müller 2001 补设计限制并纳入正文。
+- 双语 README 同步 (第四篇 22→19, van Netten 口径, IF 说明, "无代码" 过时描述修正); .gitignore 更新 (加 *.log, gh_tunnel_local.py, gh_proxy_tool.py, 解决两个遗留未跟踪文件)。
+- commit 28e0589 推送成功 (直连, 0be66ab..28e0589); 回读审计 git blob SHA 17/17 PASS (远程=本地)。
+
+### 报告1-3 机械化复核 (99 PMID 全部有效, 发现 1 处真错误)
+- 对报告1 (40 行)/报告2 (23 行)/报告3 (38 行) 共 99 条表行做 PMID→TA/年份/一作交叉核验, 全部可解析。
+- **真错误 1 处 (报告3, 待修)**: PMID 16619053 的一作实为 **Ben Zion IZ** (Ben Zion, Tessler, Cohen...Ebstein RP), 报告误写为 "Lusher JM, et al." (Lusher 是另一篇 DRD4 论文)。真标题: "Polymorphisms in the dopamine D4 receptor gene (DRD4) contribute to individual differences in human sexual behavior: desire, arousal and sexual function"; 摘要已核验: 148 名非临床大学生 ✓, 外显子3重复区 + C-521T/C-616G 启动子 SNP 与欲望/唤起/功能量表相关 ✓, 最常见 5 位点单倍型 (19%) 与 Desire/Function/Arousal 相关 ✓; DOI 10.1038/sj.mp.4001832 ✓ 正确。即: 作者名+标题错, 数字与 DOI 对。需改报告3 表格 #16 行 + 正文第81行 "(Lusher et al., 2006..." 两处。
+- 无害项 1 处 (报告3): 23728643 期刊缩写 "Cochrane DB Syst Rev" 应规范为 "Cochrane Database Syst Rev" (作者 Taylor MJ ✓)。
+- **17 条 IF "—" 占位 (待补)**: 报告1: 15451368 Brain Res/14653149 Prog Brain Res/23523775 Neuroimage/29265651 Clin Anat/27622759 Lakartidningen/29940235 Neurosci Biobehav Rev/36000809 Int J Urol/41789379 BMJ Public Health; 报告3: 27456527 Int J Clin Pract/39985829 Clinics(Sao Paulo)/26797204 Int J Gynaecol Obstet/32205812 Curr Opin Urol/16619053 Mol Psychiatry/27033442 Eur Urol/34737512 J Neurosci Rural Pract/37878354 Int J Neurosci/28846767 JAMA Intern Med。ISSN 已全部从 efetch IS 字段取齐 (Int J Urol 已知=2.9 可直接填; Prog Brain Res 与 Lakartidningen 是丛书/非 JCR 刊, 可能查无值则按原值脚注)。缓存文件 _issn_map.json / _pmid_truth.json 已删 (可再生), 已加入 .gitignore。
+
+### 网络状态
+- GitHub 直连恢复 (api.github.com 200/0.53s), 本轮 fetch/push 均直连, 未用隧道; Clash 7897 仍死 (5s 超时)。
+
+### 下一步 (优先级序)
+1. **报告6 立项 (用户已批准)**: 主题 = 干性高潮 (dry orgasm / anejaculation / retrograde ejaculation / 男性非射精高潮), 用户要求 **神经环路写清楚**。计划: esearch 锁定 Truitt & Coolen 2002 Science 脊髓射精发生器 (SGE/LSt 神经元)、Coolen/Allard 中枢调控综述、逆行射精、根治性前列腺切除术后无射精、SSRI/坦索罗辛药物性、SCI 证据 (Brackett)、男性多重高潮/非射精高潮 (Dunn & Trost 1989, Wibowo & Wassersug 2016)、Holstege 射精 PET 成像; 全部 efetch 核验后成文, 神经环路单列章节 (T10-L2 交感→发射期, S2-S4 阴部神经→排出期, L3-L4 SGE, MPOA/PVN/PAG/nPGi 脊髓上控制)。若摘要不足以写清环路细节, 提请用户启用 paper-download 技能下载全文。
+2. 修报告3 的 Ben Zion 错误 (表#16 + 正文81行) + Cochrane 缩写。
+3. LetPub 补 17 条 "—" IF (ISSN 已备)。
+4. lit-review-pipeline v2.1 安装仍需用户 /guard-allow 或手动 cp (未变)。
