@@ -233,3 +233,24 @@
 2. 修报告3 的 Ben Zion 错误 (表#16 + 正文81行) + Cochrane 缩写。
 3. LetPub 补 17 条 "—" IF (ISSN 已备)。
 4. lit-review-pipeline v2.1 安装仍需用户 /guard-allow 或手动 cp (未变)。
+
+## ===== [2026-10-03 00:51:24] checkpoint #4: 报告6 (干性高潮) 完成, 神经环路单列章节 =====
+
+- 用户批准写报告6 并要求 "神经环路写清楚"; 主题定为干性高潮 (有高潮无精液): 射精两相位 + 脊髓射精发生器 (SGE) + 脑桥双中枢 + 临床病因按 "环路断点" 归类。
+- 检索与核验: 18 组 esearch -> 约 90 个候选 -> 逐条 efetch 核验后入表 38 条, 双向 PMID 一致性检查 0 孤儿。
+- **关键发现与核验事实** (全部照抄摘要):
+  - Truitt & Coolen 2002 Science (12202834): 大鼠 LSt 细胞选择性毒素 SSP-saporin 毁损 -> 射精行为完全中断; LSt 表达 NK1R, 构成 SGE 组成部分。
+  - **注意坑: 我记忆中的 Truitt Science PMID 12223292 实为微生物方法学论文** (Inclusion counter), 真实 PMID 为 12202834 -- 再次证明不能凭记忆填 PMID。
+  - Truitt 2003 J Neurosci (12514231): LSt 位于 L3-L4 板层 7 与 10, galanin+/CCK; 雄鼠射精后 FOS 激活, 雌鼠阴道宫颈刺激后不激活。
+  - Borgdorff 2008 Eur Urol (18394782): L4 (VII/X 层) 300-500 ms 微刺激 -> 17/17 大鼠排精 (10/17 含活动精子), 同步记录 BSM-EMG 与精囊/输精管腔压。
+  - **Chehensse 2017 Ann Neurol (27917533) 人类 SEG**: 6 男 6 女尸检 L2-L5 galanin 能神经元 (内侧第 VII 层, L4 密度峰值, 中央管两侧单柱), 男性 L3-L4 密度高于女性 (性二形); **384 例完全性 SCI 伴无射精者中 L3-L5 节段损伤是 PVS 失败的唯一独立预测因子**。
+  - Huynh 2013 J Sex Med (23981195): 左侧背外侧脑桥被盖 = 盆腔器官刺激中枢 (POSC, 射精/真实高潮激活, 未成功高潮与假装高潮也激活, 排尿时在右侧激活, 投射至骶部副交感运动神经元); 右侧腹外侧脑桥被盖 = 盆底刺激中枢 (PFSC, 仅真实射精/高潮激活)。
+  - Koeman 1996 BJU Int (8705222): RP 术后 20 例, 干性高潮时无一例体验到 "point of no return", 17 例描述中 7 人高潮感觉减弱。
+  - Ibrahim 2022 Res Rep Urol (35480782): SCI 约 90% 射精障碍, 约 10% 可自慰射精; PVS 对损伤平面 T10 及以上者 86% 成功 (该平面约占 SCI 人群 80%)。
+  - Michel 2007 Br J Pharmacol (17603543): alpha1A 选择性拮抗剂 (坦索罗辛/西洛多辛) 致的是 "相对无射精" 而非逆行射精; alpha1A 敲除小鼠显示输精管功能受损而非精子异常。
+  - Wibowo 2016 Sex Med Rev (27872023): 男性多重高潮 <10% (20 多岁) / <7% (>30 岁), sporadic 与 condensed 两型; Dunn & Trost 1989 (2818169): 21 例, 非射精高潮可出现在射精高潮前后。
+- 报告含 ASCII 双相位流程图与四层环路图 (皮层/脑桥/SGE/外周), 病因学按断点分六类, 处理按 Mehta 2015 分层 (拟交感/尿中取精/膀胱颈重建/前列腺按摩/PVS/电射精/手术取精), Kamischke 1999 的 88+136 研究规模与 "缺 RCT" 局限如实保留。
+- 双语 README 同步新增第六篇 (38 篇引用, 编号规则 Part 6 = 1-38, 状态节加 2026-10-02 条目)。
+- IF: LetPub 实查约 34 刊 (Science 52.9, Lancet Neurol 54.6, Eur Urol 29.1, Hum Reprod Update 20.1, Mol Psychiatry 10.4, Andrology 7.4, Br J Pharmacol 7.5, Ann Neurol 7.5, Fertil Steril 8.1, Neurosci Biobehav Rev 8.5, Hum Reprod 6.8, JAMA Intern Med 26.3, Biology 4.3, NeuroImage 5.3, BJU Int 4.1, Diagnostics 3.8, World J Urol 3.3, Basic Clin Pharmacol Toxicol 3.6, J Sex Med 3.6, Sex Med Rev 3.0, Brain Res 3.2, Clin Anat 2.4, Physiol Behav 2.7 等); Neuroscience 与 Clinics (Sao Paulo) LetPub 检索未返回条目 -> 报告内以 "—*" 加脚注标注, 不猜数。**这些 IF 同时补上报告1/3 的 16 个 "—" 缺口** (NeuroImage 5.3, Brain Res 3.2, Clin Anat 2.4, Int J Urol 2.9, Int J Clin Pract 2.0, Curr Opin Urol 2.3, Mol Psychiatry 10.4, Int J Neurosci 1.7, JAMA Intern Med 26.3, Neurosci Biobehav Rev 8.5 等), 补录待下一次提交。
+- 遗留 (待下一轮): (a) 把本轮新查 IF 回填报告1/报告3 的 16 个 "—" 单元格; (b) 修报告3 的 Ben Zion 错误 (16619053 一作实为 Ben Zion IZ, 表 #16 + 正文 81 行) 与 Cochrane 缩写 (23728643 -> Cochrane Database Syst Rev); (c) Clinics (Sao Paulo) 与 Int J Gynaecol Obstet 两个 IF 仍缺; (d) 若写知乎推广文 -> lit-review-pipeline v2.1 仍需 /guard-allow 安装。
+- 网络: GitHub 直连恢复后又抖动 (push e65bbb0 时直连失败, 改走 18964 隧道成功); Clash 7897 仍死。
